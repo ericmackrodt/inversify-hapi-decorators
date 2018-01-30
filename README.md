@@ -1,17 +1,19 @@
-# inversify-hapijs-utils
+# inversify-hapi-decorators
+
+> A fork of `andrewwh/inversify-hapijs-utils`
 
 Some utilities for the development of hapijs application with Inversify. Based on the inversify-restify.utils. If you're starting writing restful api's then I suggest you use Restify (and the inversify-restify-utils). If you want to use hapi (or you have to) then this project can help you in the same way that inversify-restify.utils does. 
 
 > Note: this project is still a work in progress and does not have any test coverage.
 
 ## Installation
-You can install `inversify-hapijs-utils` using npm:
+You can install `inversify-hapi-decorators` using npm:
 
 ```
-$ npm install inversify inversify-hapijs-utils reflect-metadata --save
+$ npm install inversify inversify-hapi-decorators reflect-metadata --save
 ```
 
-The `inversify-hapijs-utils` type definitions are included in the npm module and require TypeScript 2.0.
+The `inversify-hapi-decorators` type definitions are included in the npm module and require TypeScript 2.0.
 Please refer to the [InversifyJS documentation](https://github.com/inversify/InversifyJS#installation) to learn more about the installation process.
 
 ## The Basics
@@ -23,7 +25,7 @@ The following example will declare a controller that responds to `GET /foo'.
 
 ```ts
 import { Request } from 'hapijs';
-import { Controller, Get, interfaces } from 'inversify-hapijs-utils';
+import { Controller, Get, interfaces } from 'inversify-hapi-decorators';
 import { injectable, inject } from 'inversify';
 
 @Controller('/foo')
@@ -48,11 +50,11 @@ Then, pass the container to the InversifyHapiServer constructor. This will allow
 Then just call server.build() to prepare your app.
 
 In order for the InversifyHapiServer to find your controllers, you must bind them to the `TYPE.Controller` service identifier and tag the binding with the controller's name.
-The `Controller` interface exported by inversify-hapijs-utils is empty and solely for convenience, so feel free to implement your own if you want.
+The `Controller` interface exported by inversify-hapi-decorators is empty and solely for convenience, so feel free to implement your own if you want.
 
 ```ts
 import { Container } from 'inversify';
-import { interfaces, InversifyHapiServer, TYPE } from 'inversify-hapijs-utils';
+import { interfaces, InversifyHapiServer, TYPE } from 'inversify-hapi-decorators';
 
 // set up container
 let container = new Container();

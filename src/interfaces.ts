@@ -1,7 +1,7 @@
 import * as hapi from "hapi";
 import { interfaces as inversifyInterfaces } from "inversify";
 
-namespace interfaces {
+export namespace interfaces {
 
     export type Middleware = (inversifyInterfaces.ServiceIdentifier<any> | hapi.RouteHandler);
 
@@ -36,5 +36,3 @@ namespace interfaces {
       defaultRoot?: string;
     }
 }
-
-export { interfaces };
